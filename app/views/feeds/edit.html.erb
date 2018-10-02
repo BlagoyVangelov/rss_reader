@@ -1,0 +1,8 @@
+<h1>Editing Feed</h1>
+<div class="container">
+	<%= render 'form', feed: @feed %>
+	<nav class="footer_nav">
+		<%= link_to 'Show', @feed, class: "btn btn-secondary" %>
+		<%= link_to 'Back', feeds_path, class: "btn btn-secondary" %>
+	</nav>
+</div>

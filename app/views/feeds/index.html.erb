@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Feeds</h1>
+<%= link_to 'New Feed', new_feed_path, class: "btn btn-secondary" %>
+<br />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr>
+        <td><%= feed[:name] %></td>
+        <td>
+          <%= link_to(feed_path(feed[:id]), title: "Show feed") do%>
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+          <% end %>
+
+          <%= link_to(edit_feed_path(feed[:id]), title: "Edit feed") do %>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <% end %>
+
+        <%= link_to(feed_path(feed[:id]), method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete feed") do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
+
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<strong>Name: </strong>
+	<%= @feed_name %>
+</p>
+<p>
+	<strong>Url: </strong>
+	<%= @feed.url %>
+</p>
+<nav class="footer_nav">
+	<%= link_to 'Edit', edit_feed_path(@feed), class: "btn btn-secondary" %>
+	<%= link_to 'Back', feeds_path, class: "btn btn-secondary" %>
+</nav>

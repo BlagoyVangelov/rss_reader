@@ -1,0 +1,10 @@
+  <nav>
+	  <ul class="nav nav-pills justify-content-center">
+	    <li class="nav-item">
+	      <%=  link_to 'Feeds', feeds_path, class: (( (controller_name == 'feeds') || current_page?('/') )? "nav-link active" : "nav-link") %>
+	    </li>
+	    <li class="nav-item">
+	      <%=  link_to 'Reader', '#', class: "nav-link" %>
+	    </li>
+	  </ul>
+  </nav>
