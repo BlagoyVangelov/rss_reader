@@ -4,7 +4,7 @@
 	      <%=  link_to 'Feeds', feeds_path, class: (( (controller_name == 'feeds') || current_page?('/') )? "nav-link active" : "nav-link") %>
 	    </li>
 	    <li class="nav-item">
-	      <%=  link_to 'Reader', '#', class: "nav-link" %>
+	      <%=  link_to 'Reader', readers_index_path, class: ((controller_name == 'readers') ? "nav-link active" : "nav-link") %>
 	    </li>
 	  </ul>
   </nav>

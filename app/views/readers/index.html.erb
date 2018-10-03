@@ -1,0 +1,17 @@
+<div class="container">
+	<h1>Posts</h1>
+		<ul class="list-group list-group-flush">
+			<% @posts.each do |post| %>
+				<li class="list-group-item">
+					<span class="grey">
+						<%= post[:feed_name].length > 15 ? post[:feed_name][0..15]+ "..." : post[:feed_name] %>
+					</span> 
+						<%= link_to(post[:name], post[:url], target: :_blank) %> 
+					<span class="grey">
+						<%= post[:period] %>
+					</span>
+				</li>
+			<% end %>
+		</ul>
+
+</div>
