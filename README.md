@@ -1,24 +1,17 @@
-# README
+# RSS Reader
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+## For developers
 
-* Ruby version
+### Runnung locally
 
-* System dependencies
+$ bundles install
+$ rake db:migrate
+$ rails s
 
-* Configuration
 
-* Database creation
+### Runnung the tests
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+$ rake db:migrate RAILS_ENV=test
+$ rspec
