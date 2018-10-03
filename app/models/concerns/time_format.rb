@@ -1,3 +1,4 @@
+#Format time period
 module TimeFormat
 	def delta_time_in_seconds(pub_time_obj)
 		(Time.now.to_i - pub_time_obj.to_i)
@@ -26,6 +27,7 @@ module TimeFormat
 	end
 
 	private
+
 	def delta_time_in_minutes(pub_date)
 		(pub_date/60).floor
 	end

@@ -5,6 +5,7 @@ require 'open_uri_redirections'
 class Reader
 	extend TimeFormat
 	class << self
+		# Get the feed name from the given URL
 		def feed_name(url)
 			begin
 				rss = rss_feed(url)
@@ -14,12 +15,12 @@ class Reader
 			end
 		end
 
-		def all_feed_names feeds
+		# Return an array of hashes that contain feed.id and feed.name
+		def all_feed_names(feeds)
 			names = Array.new
 			feeds.each do |feed|
 				temp = {
 						:id=>feed.id,
-						:url=>feed.url,
 						:name=>feed_name(feed.url)
 						}
 				names << temp
@@ -28,7 +29,8 @@ class Reader
 			names
 		end
 
-		def all_feeds_posts feeds
+		# Return an array of hashes that contain posts of the feeds
+		def all_feeds_posts(feeds)
 			all_posts = Array.new
 			feeds.each do |feed|
 				begin
@@ -42,6 +44,7 @@ class Reader
 		end		
 
 		private
+
 		def rss_feed(url)
 			open(url, allow_redirections: :safe) do |rss|
 				RSS::Parser.parse(rss)
@@ -67,7 +70,7 @@ class Reader
 
 			end
 
-			return posts
+			posts
 		end
 	end
 

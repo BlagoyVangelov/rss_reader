@@ -22,7 +22,7 @@ RSpec.describe "Feed" do
 		Feed.create!(url: "http://feeds.bbci.co.uk/news/rss1.xml")
 
 		visit feeds_path
-		# find(:css, 'i.fa.fa-pencil-square-o').click
+
 		click_on("Edit feed")
 		fill_in "feed_url", with: "http://feeds.bbci.co.uk/news/rss.xml"
 		click_on("Update Feed")
